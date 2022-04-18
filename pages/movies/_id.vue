@@ -40,7 +40,7 @@ export default {
 
   methods: {
     moviePoster (movie) {
-      return `http://image.tmdb.org/t/p/original${movie.poster_path}`
+      return `http://image.tmdb.org/t/p/w500${movie.poster_path}`
     }
   }
 }
