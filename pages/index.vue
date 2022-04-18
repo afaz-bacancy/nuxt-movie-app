@@ -2,8 +2,8 @@
   <div>
     <h1>Popular Movies today</h1>
 
-    <a-row :gutter="[32, 32]" align="middle">
-      <a-col v-for="movie in movies" :key="movie.id" :xs="32" :sm="12" :lg="6">
+    <a-row :gutter="[12, 12]" type="flex">
+      <a-col v-for="movie in movies" :key="movie.id" :xs="12" :md="6" :lg="4">
         <nuxt-link :to="`/movies/${movie.id}`">
           <a-card hoverable>
             <template #cover>
