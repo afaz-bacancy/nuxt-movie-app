@@ -1,15 +1,24 @@
 <template>
   <div>
-    <h1>{{ movie.original_title || movie.title }}</h1>
-
-    <a-row :gutter="[32, 32]" type="flex">
-      <a-col :span="8">
-        <img class="movie-poster" :src="moviePoster(movie)">
+    <a-row :gutter="[32, 32]" type="grid">
+      <a-col :sm="16" :md="12">
+        <a-card>
+          <template #cover>
+            <img class="movie-poster" :src="moviePoster(movie)">
+          </template>
+        </a-card>
       </a-col>
-      <a-col :span="12">
+      <a-col :sm="16" :md="12">
+        <h1>{{ movie.title || movie.original_title }}</h1>
+
+        <h3>Synopsis:</h3>
         <p>{{ movie.overview }}</p>
-        <p>Rating: {{ movie.vote_average }}/10</p>
-        <p>Released: {{ movie.release_date }}</p>
+
+        <h3>Rating:</h3>
+        <p>{{ movie.vote_average }}/10</p>
+
+        <h3>Released:</h3>
+        <p>{{ movie.release_date }}</p>
       </a-col>
     </a-row>
   </div>
@@ -25,7 +34,7 @@ export default {
 
   head () {
     return {
-      title: this.movie.original_title || this.movie.title
+      title: this.movie.title || this.movie.original_title
     }
   },
 
@@ -36,10 +45,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.movie-poster {
-  width: 100%;
-  height: auto;
-}
-</style>

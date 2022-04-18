@@ -2,15 +2,15 @@
   <div>
     <h1>Popular Movies today</h1>
 
-    <a-row :gutter="[32, 32]" type="flex" align="middle">
-      <a-col v-for="movie in movies" :key="movie.id" :span="6">
+    <a-row :gutter="[32, 32]" type="grid" align="middle">
+      <a-col v-for="movie in movies" :key="movie.id" :xs="32" :sm="12" :lg="6">
         <nuxt-link :to="`/movies/${movie.id}`">
           <a-card hoverable>
             <template #cover>
               <img :src="moviePoster(movie)">
             </template>
 
-            <a-card-meta :title="movie.original_title || movie.title">
+            <a-card-meta :title="movie.title || movie.original_title">
               <template #description>
                 <div>Released <br><small>{{ movie.release_date }}</small></div>
               </template>
