@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-row :gutter="[32, 32]" type="grid">
+    <a-row :gutter="[32, 32]" type="flex">
       <a-col :sm="16" :md="12">
         <a-card hoverable>
           <template #cover>
