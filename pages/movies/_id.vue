@@ -2,7 +2,7 @@
   <div>
     <a-row :gutter="[32, 32]" type="grid">
       <a-col :sm="16" :md="12">
-        <a-card>
+        <a-card hoverable>
           <template #cover>
             <img class="movie-poster" :src="moviePoster(movie)">
           </template>
